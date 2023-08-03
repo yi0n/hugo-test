@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{- /* Title */}}
+<title>{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ site.Title }}</title>
+{{- /* Meta */}}
+{{- if .IsHome }}
+{{ with site.Params.keywords -}}<meta name="keywords" content="{{- range $i, $e := . }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}">{{ end }}
+{{- else }}
+<meta name="keywords" content="{{ if .Params.keywords -}}
+    {{- range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} {{- else }}
+    {{- range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} {{- end -}}">
+{{- end }}
+<meta name="description" content="{{- with .Description }}{{ . }}{{- else }}{{- if or .IsPage .IsSection}}
+    {{- .Summary | default (printf "%s - %s" .Title  site.Title) }}{{- else }}
+    {{- with site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
+<link rel="canonical" href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL " " }} {{- else -}} {{ .Permalink }} {{- end }}">
+
+
+<link rel="icon" href="{{ site.Params.static }}/assets/favicon.ico" sizes="any">
+<link rel="icon" href="{{ site.Params.static }}/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ site.Params.static }}/assets/icon.png">
+
+<base href="/">
+<link rel="stylesheet" href="{{ site.Params.static }}/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ site.Params.static }}/css/fontawesome-all.css">
+<link rel="stylesheet" href="{{ site.Params.static }}/css/jquery-ui.css">
+<link rel="stylesheet" href="{{ site.Params.static }}/css/animate.css">
+<link rel="stylesheet" href="{{ site.Params.static }}/css/nice-select.css">
+<link rel="stylesheet" href="{{ site.Params.static }}/css/video.min.css">
+<link rel="stylesheet" href="{{ site.Params.static }}/css/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" href="{{ site.Params.static }}/css/slick.css">
+<link rel="stylesheet" href="{{ site.Params.static }}/css/slick-theme.css">
+<link rel="stylesheet" href="{{ site.Params.static }}/css/style.css">

@@ -1,0 +1,7 @@
+baseURL = 'https://example.de/'
+languageCode = 'de'
+defaultContentLanguage = 'de'
+title = 'Example'
+copyright = 'test'
+theme = 'transit_converted'
+enableRobotsTXT = true

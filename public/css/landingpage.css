@@ -1,0 +1,37 @@
+section {
+  /* min-height: 100vh !important; */
+}
+
+hr {
+  border-bottom-color: rgb(196, 195, 195) !important;
+}
+
+#impressum p,
+.footerlinks {
+  color: grey;
+}
+
+.section-arrow--bottom::before {
+  border-top-color: #2a5cb3 !important;
+}
+
+
+.partner-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.partner-list li {
+  width: auto;
+  white-space: unset;
+  height: 100%;
+}
+
+.partner-logo {
+  max-width: 8em;
+  max-height: 6em;
+  min-width: 2em;
+  min-height: 2em;
+}

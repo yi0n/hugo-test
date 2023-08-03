@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language }}">
+    <head>
+        {{- partial "head.html" . -}}
+        <link rel="stylesheet" href="{{ site.Params.static }}/fontawesome/css/all.css" referrerpolicy="no-referrer">
+        <link href="{{ site.Params.static }}/css/landingpage.css" type="text/css" rel="stylesheet" referrerpolicy="no-referrer">
+    </head>
+    <body>
+        <div id="preloader"></div>
+        <div class="up">
+            <a href="#" class="scrollup text-center"><i class="fas fa-chevron-up"></i></a>
+        </div>
+        {{- partialCached "header.html" . -}}
+        <div id="content">
+            {{.Content}}
+        </div>
+        {{- partialCached "footer.html" . -}}
+    </body>
+</html>
